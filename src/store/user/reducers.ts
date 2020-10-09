@@ -1,12 +1,12 @@
 import { UserAction, UserState, REGISTER_SUCCESS, REGISTER_LOADING, REGISTER_FAILED, LOGIN_SUCCESS, LOGIN_FAILED, LOGIN_LOADING } from "./types";
 
-const initialState : UserState = {
+const defaultState : UserState = {
     currentUser: null,
     loading: false,
     error: ""
 }
 
-const userReducer = (state = initialState, action: UserAction) => {
+const userReducer = (state = defaultState, action: UserAction) => {
     switch (action.type) {
         case REGISTER_LOADING:
             return {
@@ -47,6 +47,8 @@ const userReducer = (state = initialState, action: UserAction) => {
                 loading: true,
                 error: ""
             }
+        default:
+            return state;
     }
 }
 
