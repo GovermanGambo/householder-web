@@ -1,4 +1,3 @@
-import { act } from "react-dom/test-utils";
 import { ExpenseState, ExpenseAction, GET_SUCCESS, GET_FAILED, GET_LOADING } from "./types";
 
 const defaultState: ExpenseState = {

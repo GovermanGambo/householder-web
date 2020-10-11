@@ -7,7 +7,7 @@ export const GetExpenses = () => async (dispatch: any) => {
             type: GET_LOADING
         });
 
-        const res = await axios.get(`https://localhost:5001/api/expense`);
+        const res = await axios.get(`https://localhost:5001/api/expenses`);
 
         dispatch({
             type: GET_SUCCESS,

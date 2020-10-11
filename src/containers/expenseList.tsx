@@ -2,11 +2,11 @@ import React from "react";
 import _ from 'lodash';
 import { useDispatch, useSelector } from "react-redux";
 import { GetExpenses } from "../store/expense/actions";
-import { ExpenseState } from "../store/expense/types";
+import { RootState } from "../store";
 
 const ExpenseList = () => {
     const dispatch = useDispatch();
-    const expenseList = useSelector((state: ExpenseState) => state);
+    const expenseList = useSelector((state: RootState) => state.expenses);
     React.useEffect(() => {
         fetchData()
     }, []);
@@ -16,6 +16,7 @@ const ExpenseList = () => {
     }
 
     const showData = () => {
+        console.log(expenseList);
         if (expenseList.loading) {
             return <p>Loading...</p>
         }
@@ -35,10 +36,10 @@ const ExpenseList = () => {
         }
 
         if (expenseList.error !== "") {
-            return <p>{expenseList.error}</p>
+            return <p>Error: {expenseList.error}</p>
         }
 
-        return <p>Error</p>
+        return <p>No expenses</p>
     }
 
     return (
