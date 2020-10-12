@@ -18,7 +18,8 @@ const LoginPage = () => {
     const tryLogin = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log(loginDetails);
-        dispatch(loginUser(loginDetails))
+        dispatch(loginUser(loginDetails));
+        console.log("User: " + loginState.currentUser)
     }
 
     const showLoginState = () => {

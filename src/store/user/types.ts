@@ -6,9 +6,12 @@ export const LOGIN_SUCCESS = "users/LOGIN_SUCCESS";
 export const LOGIN_FAILED = "users/LOGIN_FAILED";
 export const LOGIN_LOADING = "users/LOGIN_LOADING";
 
+export const VALIDATION_SUCCESS = "users/VALIDATION_SUCCESS";
+export const VALIDATION_FAILED = "users/VALIDATION_FAILED";
+
 export interface UserAction {
     type: string,
-    payload: User,
+    payload: string,
     error: string
 }
 
@@ -35,7 +38,7 @@ export type User = {
 }
 
 export type UserState = {
-    currentUser: User | null;
+    currentUser: string | null;
     loading: boolean;
     error: string;
 }
