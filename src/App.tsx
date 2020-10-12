@@ -1,17 +1,16 @@
 import React from 'react';
-import { NavLink, Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import './App.css';
-import ExpenseList from './containers/expenseList';
+import ApplicationMain from './components/ApplicationMain/applicationMain';
+import LoginPage from './components/Login/login';
+import PrivateRoute from './components/privateRoute';
 
 function App() {
   return (
     <div className="App">
-      <nav>
-        <NavLink to={"/"}>Search</NavLink>
-      </nav>
       <Switch>
-        <Route path={"/"} exact component={ExpenseList} />
-        <Redirect to={"/"} />
+        <Route path='/login' component={LoginPage} />
+        <PrivateRoute path='/' component={ApplicationMain} />
       </Switch>
     </div>
   );

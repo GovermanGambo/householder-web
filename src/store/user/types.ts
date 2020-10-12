@@ -22,7 +22,7 @@ export type RegisterDetails = {
 }
 
 export type LoginDetails = {
-    username: string;
+    email: string;
     password: string;
 }
 

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { REGISTER_SUCCESS, REGISTER_FAILED, REGISTER_LOADING, LOGIN_SUCCESS, LOGIN_FAILED, LOGIN_LOADING, LoginDetails, UserAction, RegisterDetails } from "./types";
+import { REGISTER_SUCCESS, REGISTER_FAILED, REGISTER_LOADING, LOGIN_SUCCESS, LOGIN_FAILED, LOGIN_LOADING, LoginDetails, RegisterDetails } from "./types";
 
 export const registerUser = (registerDetails: RegisterDetails) => async (dispatch: any) => {
     try {
@@ -16,7 +16,7 @@ export const registerUser = (registerDetails: RegisterDetails) => async (dispatc
     } catch (e) {
         dispatch({
             type: REGISTER_FAILED,
-            error: e
+            error: e.response.data.message
         })
     }
 }
@@ -27,16 +27,18 @@ export const loginUser = (loginDetails: LoginDetails) => async (dispatch: any) =
             type: LOGIN_LOADING
         });
 
-        const res = await axios.post(`https://localhost:5001/api/user/login`, loginDetails);
+        const res = await axios.post(`https://localhost:5001/api/users/login`, loginDetails);
+
+        localStorage.setItem("token", res.data.token);
 
         dispatch({
             type: LOGIN_SUCCESS,
-            payload: res.data
+            payload: res.data.user
         })
     } catch (e) {
         dispatch({
             type: LOGIN_FAILED,
-            error: e
+            error: e.response.data.message
         })
     }
 }

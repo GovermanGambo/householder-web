@@ -1,0 +1,36 @@
+.text-field input {
+    color: rgb(90, 90, 90);
+    font-size: 1rem;
+    line-height: 1.2rem;
+    vertical-align: middle;
+    
+    &::-webkit-input-placeholder {
+      color: #324266ff;
+    }
+}
+
+.text-field {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 400px;
+    margin: 0.5rem auto;
+    border-radius: 2px;
+    padding: 0.8rem;
+    background-color: rgb(228, 228, 228);
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      z-index: 999;
+      height: 2px;
+      border-bottom-left-radius: 2px;
+      border-bottom-right-radius: 2px;
+      background-position: 0% 0%;
+      background-color: #536fafff;
+      background-size: 500% auto;
+    }
+}

@@ -1,0 +1,178 @@
+// Colors
+$background: #439D4C;
+$primary: #3B8742;
+$secondary: #317837;
+$tertiary: #036E0C;
+
+body, html {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-color: $background;
+    line-height: 1.4rem;
+}
+
+html { 
+    box-sizing: border-box; 
+}
+
+*, *:before, *:after { 
+    box-sizing: inherit; 
+}
+
+input { 
+    border-style: none; 
+    background: transparent; 
+    outline: none; 
+}
+
+button { 
+    padding: 0; 
+    background: none; 
+    border: none; 
+    outline: none; 
+}
+
+.center { /* thing to center */
+    display: grid;
+    place-items: center;
+}
+
+.vertical-list * {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.form-element {
+    margin: 8px;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.card {
+    padding: 64px 64px 0 64px;
+    background-color: white;
+    box-shadow: 4px 8px rgba(0,0,0,0.2);
+    border-radius: 5px; /* 5px rounded corners */
+    width: 500px;
+}
+
+.button-primary {
+    display: flex;
+    background-color: $primary;
+    text-align: center;
+    max-width: 200px;
+    min-width: 160px;
+    border-radius: 0.2rem;
+    padding: 10px;
+    margin: 1rem 0 1rem 0;
+}
+
+.button-primary:hover {
+    background-color: $secondary;
+    cursor: pointer;
+}
+
+.button-primary button {
+    color: white;
+    font-size: 1rem;
+}
+
+.button-primary button:hover {
+    cursor: pointer;
+}
+
+.text-field {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 400px;
+    margin: 0.5rem auto;
+    border-radius: 2px;
+    padding: 0.8rem;
+    background-color: rgb(228, 228, 228);
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      z-index: 999;
+      height: 2px;
+      border-bottom-left-radius: 2px;
+      border-bottom-right-radius: 2px;
+      background-position: 0% 0%;
+      background-color: #536fafff;
+      background-size: 500% auto;
+    }
+}
+
+p.secondary {
+    font-weight: bold;
+    color: rgb(114, 114, 114);
+}
+  
+.text-field input {
+    color: rgb(90, 90, 90);
+    font-size: 1rem;
+    line-height: 1.2rem;
+    vertical-align: middle;
+    
+    &::-webkit-input-placeholder {
+      color: #324266ff;
+    }
+}
+
+.top-menu {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(auto, 16rem));
+    grid-auto-flow: column;
+    background: white;
+    box-shadow: 0px 2px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.content {
+    background: white;
+    padding: 1rem;
+}
+
+table {
+    width: 100%;
+    height: 100%;
+}
+
+.tab-element {
+    background: white;
+}
+
+.tab-element-active {
+    background: lightgrey;
+    border-bottom: 4px solid $primary;
+}
+
+.tab-element:hover {
+    background: #e9e9e9;
+    cursor: pointer;
+}
+
+th {
+    text-align: left;
+    background-color: $primary;
+    color: white;
+}
+
+th, tr, td {
+    padding: 0.5rem;
+}
+
+table {
+    border-spacing: 0;
+    background: lightgray;
+}
